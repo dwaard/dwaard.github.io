@@ -1,0 +1,9 @@
+JE maakt een website van 1 pagina voor een spel van scouting zeeland. Het spel heet Hunted. 
+Doel van de pagina is dat de deelnemers, scouts van ongeveer 10-14 jaar, een aanwijzing uitgereikt krijgen in de vorm van een tekst.
+De tekst is: 
+"De tijd dat je op het extractiepunt moet zijn is exact dezelfde tijd als de vertrektijd van de derde bus op zondag richting het station in Middelburg vanaf de volgende halte van lijn 56."
+De deelnemers krijgen de pagina te zien op hun mobiel. De top van de pagina is een afbeelding met de naam hunted-sz.jpg. 
+Hij is 1280x730 pixels groot maar moet geschaald worden zodat hij altijd 100% van de schermbreedte is.
+De achtergrondklleur is egaal #FFFFFF. Tekstkleur is #04489B.
+Onder de afbeelding moet de Rick-roll video worden getoond. Als de deelnemers op de afbeelding of de video klikken moet er een modal verschijnen met daarop de tekst.
+Alle HTML, CSS en Javascript staat in hetzelfde bestand. Geef de volledige inhoud van dat bestand.

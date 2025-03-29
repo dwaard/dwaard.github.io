@@ -1,49 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="nl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Site</title>
-    <link rel="stylesheet" href="resources/css/normalize.css">
-    <link rel="stylesheet" href="resources/css/site.css">
-    <link rel="stylesheet" href="resources/css/menu.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/" class="active">
-              <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: -0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7Z"/></svg>
-            </a>
-          </li>
-          <li><a href="/profile.html">Profiel</a></li>
-          <li><a href="/dashboard.html">Dashboard</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
-          <li class="dropdown">
-            <a href="/blog.html" class="dropbtn">Blog</a>
-            <div class="dropdown-content">
-              <a href="#">Bedrijvensafari</a>
-              <a href="#">Code review</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <article>
-        <h1>Mijn Website landingspagina</h1>
-        <ul>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-        </ul>
-      </article>
-    </main>
-    <footer>
+    <title>Hunted - Scouting Zeeland</title>
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #04489B;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            margin: 4px;
+          }
+        .video-container {
+            width: 100%;
+            cursor: pointer;
+            margin: 4px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: white;
+            color: #04489B;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            text-align: center;
+            border: 4px solid #04489B;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%);
+            animation: slideIn 0.5s forwards;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        footer {
+            font-size: 50%;
+            margin-top: 20px;
+            color: #04489B;
+        }
 
+        @keyframes slideIn {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <img src="hunted-sz.jpg" alt="Hunted Logo" id="hintTrigger">
+    <div class="video-container" id="videoTrigger">
+      <iframe src="https://giphy.com/embed/a6OnFHzHgCU1O" width="100%" height="100%" frameBorder="0" class="giphy-embed"></iframe>
+    </div>
+
+    <div class="modal" id="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="modal-content">
+            <p>De tijd dat je op het extractiepunt moet zijn is exact dezelfde tijd als de vertrektijd van de derde bus op zondag richting het station in Middelburg vanaf de volgende halte van lijn 56.</p>
+        </div>
+    </div>
+
+    <footer>
+        VibeCoded by Bug$layer
     </footer>
-  </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('hintTrigger').addEventListener('click', function() {
+                console.log("hintTrigger");
+                document.getElementById('modal').style.display = 'flex';
+              });
+              
+              document.getElementById('videoTrigger').addEventListener('click', function(event) {
+                console.log("videoTrigger");
+                document.getElementById('modal').style.display = 'flex';
+            });
+
+            document.getElementById('closeModal').addEventListener('click', function() {
+                document.getElementById('modal').style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === document.getElementById('modal')) {
+                    document.getElementById('modal').style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
 </html>
