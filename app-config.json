@@ -1,3 +1,4 @@
 {
-  "deviceURL": "http://192.168.8.111"
+  "_comment": "Use a same-origin proxy path in production to avoid browser CORS issues.",
+  "deviceURL": "/device-api"
 }
